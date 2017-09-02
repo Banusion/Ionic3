@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
   for more info on providers and Angular DI.
 */
 @Injectable()
-export class RestProvider {
+export class Rest {
 
   private apiUrl = 'https://restcountries.eu/rest/v2/all';
 

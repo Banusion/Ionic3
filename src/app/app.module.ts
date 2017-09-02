@@ -4,7 +4,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular'
 import { MyApp } from './app.component'
 import { StatusBar } from '@ionic-native/status-bar'
 import { SplashScreen } from '@ionic-native/splash-screen'
-import { RestProvider } from '../providers/rest/rest';
+import { HttpModule } from '@angular/http'
+import { Rest } from '../providers/rest'
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { RestProvider } from '../providers/rest/rest';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -22,7 +24,7 @@ import { RestProvider } from '../providers/rest/rest';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RestProvider
+    Rest
   ]
 })
 export class AppModule {}

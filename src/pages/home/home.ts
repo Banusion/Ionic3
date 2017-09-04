@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { NavController } from 'ionic-angular'
-import { IonicPage } from "ionic-angular"
-import { Rest } from "../../providers/rest"
+import { IonicPage } from 'ionic-angular'
+import { Rest } from '../../providers/rest'
 
 @IonicPage()
 @Component({

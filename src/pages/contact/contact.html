@@ -1,17 +1,26 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
+    <ion-title>Claims</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-searchbar type="number" (input)="itemSelected($event)"></ion-searchbar>
+      <ion-buttons>
+        <button ion-button (click)="filterAPI(filter)">Apply filter</button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content padding>
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-left></ion-icon>
-      @ionicframework
+    <ion-item *ngFor="let claim of claims">
+      <h2>{{ claim.id }}</h2>
+      <ion-item *ngFor="let dep of claim.deployments;">
+        <button ion-button (click)="openModal(dep.id)">{{ dep.id }}</button>
+      </ion-item>
     </ion-item>
   </ion-list>
+  </ion-content>
 </ion-content>

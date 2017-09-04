@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar'
 import { SplashScreen } from '@ionic-native/splash-screen'
 import { HttpModule } from '@angular/http'
 import { Rest } from '../providers/rest'
+import { API } from '../providers/homeserveApi'
+import { PeopleServiceProvider } from '../providers/people-service';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { Rest } from '../providers/rest'
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Rest
+    Rest,
+    API,
+    PeopleServiceProvider
   ]
 })
 export class AppModule {}

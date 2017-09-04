@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Claim Details</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Close</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card ion-item *ngFor="let key of keys">
+    <ion-card-content>
+      <p>
+        {{ key }} : {{ deployment[key] }}
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
